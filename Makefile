@@ -55,6 +55,7 @@ all: format test build/operator-sdk ## Test and Build the Operator SDK
 
 install: ## Build & install the Operator SDK CLI binary
 	$(Q)go install \
+		-mod vendor \
 		-gcflags "all=-trimpath=${GOPATH}" \
 		-asmflags "all=-trimpath=${GOPATH}" \
 		-ldflags " \
